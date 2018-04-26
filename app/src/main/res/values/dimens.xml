@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="img_height">110dp</dimen>
+    <dimen name="img_width">110dp</dimen>
+    <dimen name="img_margin">10dp</dimen>
+
+    <dimen name="UnitCv_Size">30sp</dimen>
+    <dimen name="UnitCv_Marginbot">30dp</dimen>
+    <dimen name="title_margintop">10dp</dimen>
+    <dimen name="Box_margin">12dp</dimen>
+    <dimen name="Box_padding">3dp</dimen>
+    <dimen name="Box_height">40dp</dimen>
+    <dimen name="Box_textsize">25sp</dimen>
+    <string name="cv_title_size">30sp</string>
+
+    <dimen name="cal_title_size">30sp</dimen>
+    <dimen name="cal_box_size">24sp</dimen>
+    <dimen name="cal_marrgin">20dp</dimen>
+    <dimen name="cal_paddingright">20dp</dimen>
+    <dimen name="cal_padding">5dp</dimen>
+    <dimen name="cal_box_height">40dp</dimen>
+    <dimen name="cal_margintop">15dp</dimen>
+
+</resources>

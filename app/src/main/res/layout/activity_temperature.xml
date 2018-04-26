@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pc.smartmath.TemperatureActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="@string/temperature"
+            android:textSize="@dimen/UnitCv_Size"
+            android:textColor="@color/title_cl"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/title_margintop"/>
+        <LinearLayout
+            android:layout_marginTop="@dimen/Box_margin"
+            android:layout_marginBottom="@dimen/Box_margin"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:inputType="number"
+                android:id="@+id/edtInput"
+                android:background="@drawable/border"
+                android:padding="@dimen/Box_padding"
+                android:layout_marginLeft="@dimen/Box_margin"
+                android:layout_marginRight="@dimen/Box_margin"
+                android:layout_weight="3"
+                android:textColor="@color/Box_textcl"
+                android:hint="@string/text_hint"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Box_height" />
+            <Spinner
+                android:id="@+id/spnSelect"
+                android:layout_marginLeft="@dimen/Box_margin"
+                android:layout_marginRight="@dimen/Box_margin"
+                android:layout_weight="7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Box_height"></Spinner>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvOutput1"
+            android:gravity="center"
+            android:textColor="@color/Box_textcl"
+            android:textSize="@dimen/Box_textsize"
+            android:padding="@dimen/Box_padding"
+            android:layout_margin="@dimen/Box_margin"
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/tvOutput2"
+            android:gravity="center"
+            android:textColor="@color/Box_textcl"
+            android:textSize="@dimen/Box_textsize"
+            android:padding="@dimen/Box_padding"
+            android:layout_margin="@dimen/Box_margin"
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/tvOutput3"
+            android:gravity="center"
+            android:textColor="@color/Box_textcl"
+            android:textSize="@dimen/Box_textsize"
+            android:padding="@dimen/Box_padding"
+            android:layout_margin="@dimen/Box_margin"
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/tvOutput4"
+            android:gravity="center"
+            android:textColor="@color/Box_textcl"
+            android:textSize="@dimen/Box_textsize"
+            android:padding="@dimen/Box_padding"
+            android:layout_margin="@dimen/Box_margin"
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

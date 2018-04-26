@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SmartMath</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="UnitCv">UNIT CONVERTER</string>
+    <string name="currency">Tiền tệ - Money</string>
+    <string name="speed">Vận tốc - Speed</string>
+    <string name="weight">Cân nặng - Weight</string>
+    <string name="distance">Khoảng cách - Distance</string>
+    <string name="temperature">Nhiệt độ - Temperature</string>
+    <string name="angle">Góc - Angle</string>
+    <string name="text_hint">Input Value Here</string>
+    <string name="cal_title">CALCULATOR</string>
+
+
+</resources>
