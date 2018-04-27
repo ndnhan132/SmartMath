@@ -12,5 +12,9 @@
     <string name="text_hint">Input Value Here</string>
     <string name="cal_title">CALCULATOR</string>
 
+    <string name="set_lang">Ngôn ngữ</string>
+    <string name="set_bg">Màu nền</string>
+    <string name="set_size">Kích cỡ icon</string>
+
 
 </resources>

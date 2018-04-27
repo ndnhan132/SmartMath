@@ -7,7 +7,7 @@
     tools:context="com.example.pc.smartmath.MainActivity">
 
     <LinearLayout
-        android:background="#D6D7D7"
+        android:background="@color/bg1"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:background="@null"
                 android:layout_margin="@dimen/img_margin"
                 android:id="@+id/imgbtnCal"
                 android:layout_width="@dimen/img_width"
@@ -27,6 +28,7 @@
                 android:src="@drawable/cal1" />
 
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnCam"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -40,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnConvert"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -48,6 +51,8 @@
                 android:src="@drawable/cv2" />
 
             <ImageButton
+                android:id="@+id/imgbtnList"
+                android:background="@null"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
                 android:layout_height="@dimen/img_height"
@@ -60,6 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:id="@+id/imgbtnSetting"
+                android:background="@null"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
                 android:layout_height="@dimen/img_height"
@@ -67,6 +74,8 @@
                 android:src="@drawable/settings" />
 
             <ImageButton
+                android:id="@+id/imgbtnTeam"
+                android:background="@null"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
                 android:layout_height="@dimen/img_height"

@@ -16,15 +16,78 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConverterUnitActivity" />
-        <activity android:name=".CurrencyActivity" />
-        <activity android:name=".TemperatureActivity" />
-        <activity android:name=".WeightActivity" />
-        <activity android:name=".AngleActivity" />
-        <activity android:name=".DistanceActivity" />
-        <activity android:name=".SpeedActivity" />
-        <activity android:name=".CalculatorActivity" />
-        <activity android:name=".CamActivity"></activity>
+        <activity android:name=".ConverterUnitActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".CurrencyActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".TemperatureActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".WeightActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".AngleActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".DistanceActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".SpeedActivity"
+            android:parentActivityName="com.example.pc.smartmath.ConverterUnitActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".CalculatorActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".CamActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".SettingActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+    </activity>
+        <activity android:name=".ListActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
+        <activity android:name=".TeamActivity"
+            android:parentActivityName="com.example.pc.smartmath.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pc.smartmath.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

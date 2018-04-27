@@ -21,4 +21,5 @@
     <dimen name="cal_box_height">40dp</dimen>
     <dimen name="cal_margintop">15dp</dimen>
 
+    <dimen name="set_size">20sp</dimen>
 </resources>

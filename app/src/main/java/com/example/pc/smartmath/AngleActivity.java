@@ -19,7 +19,7 @@ public class AngleActivity extends AppCompatActivity {
     private EditText edtInput;
     private TextView tvOutput1,tvOutput2,tvOutput3,tvOutput4,tvOutput5,tvOutput6;
     private Spinner spnSelect;
-    private float m, cm,mm,km,nm,um;
+    private double mdo, giay, phut, rad, grad;
     private float input;
 
     @Override
@@ -27,20 +27,21 @@ public class AngleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_angle);
         initWidget();
+        getSupportActionBar().setTitle("Angle");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        m=1;
-        cm=m/100;
-        mm=m/1000;
-        km=m*1000;
-        nm=m/1000000000;
-        um=m/1000000;
-        List<String> list= new ArrayList<>();
-        list.add("m");
-        list.add("cm");
-        list.add("mm");
-        list.add("km");
-        list.add("nm");
-        list.add("µm");
+        mdo=1;
+        giay= mdo/3600;
+        phut= mdo/60;
+        rad= mdo*57.296;
+        grad=mdo*0.9;
+
+        List<String>list= new ArrayList<>();
+        list.add("Độ");
+        list.add("Giây");
+        list.add("Phút");
+        list.add("Radian");
+        list.add("Grad");
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spnSelect.setAdapter(adapter);
@@ -72,7 +73,6 @@ public class AngleActivity extends AppCompatActivity {
                 Convert();
             }
         });
-
     }
     private void initWidget(){
         edtInput= (EditText)findViewById(R.id.edtInput);
@@ -88,37 +88,40 @@ public class AngleActivity extends AppCompatActivity {
         try{
             input= Float.parseFloat(edtInput.getText().toString());
         }catch (Exception ex){
-
         }
-        float select= selected();
-        tvOutput1.setText(input*select/m+" m");
-        tvOutput2.setText(input*select/cm+" cm");
-        tvOutput3.setText(input*select/mm+" mm");
-        tvOutput4.setText(input*select/km+" km");
-        tvOutput5.setText(input*select/nm+" nm");
-        tvOutput6.setText(input*select/um+" µm");
+        if (edtInput.getText().toString().equals("")){
+            tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
+            tvOutput5.setText(" ");
+        }else {
+            double select= selected();
+            tvOutput1.setText(input*select/mdo+" Độ");
+            tvOutput2.setText(input*select/giay+" Giây");
+            tvOutput3.setText(input*select/phut+" Phút");
+            tvOutput4.setText(input*select/rad+" Radian");
+            tvOutput5.setText(input*select/grad+" Grad");
+        }
     }
-    private float selected(){
+    private double selected(){
         String s= spnSelect.getSelectedItem().toString();
-        float select= 0;
+        double select= 0;
         switch(s){
-            case "m":
-                select= m;
+            case "Độ":
+                select= mdo;
                 break;
-            case "mm":
-                select= mm;
+            case "Giây":
+                select= giay;
                 break;
-            case "cm":
-                select= cm;
+            case "Phút":
+                select= phut;
                 break;
-            case "km":
-                select= km;
+            case "Radian":
+                select= rad;
                 break;
-            case "nm":
-                select= nm;
-                break;
-            case "um":
-                select= um;
+            case "Grad":
+                select= grad;
                 break;
         }
         return select;

@@ -29,6 +29,8 @@ public class DistanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distance);
         initWidget();
+        getSupportActionBar().setTitle("Distance");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         m=1;
         mm=m/1000;
@@ -92,13 +94,22 @@ public class DistanceActivity extends AppCompatActivity {
         }catch (Exception ex){
 
         }
-        double select= selected();
-        tvOutput1.setText(input*select/m+" m");
-        tvOutput2.setText(input*select/mm+" mm");
-        tvOutput3.setText(input*select/km+" km");
-        tvOutput4.setText(input*select/dam+" Dặm");
-        tvOutput5.setText(input*select/foot+" foot");
-        tvOutput6.setText(input*select/inch+" inch");
+        if (edtInput.getText().toString().equals("")){
+            tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
+            tvOutput5.setText(" ");
+            tvOutput6.setText(" ");
+        }else {
+            double select= selected();
+            tvOutput1.setText(input*select/m+" m");
+            tvOutput2.setText(input*select/mm+" mm");
+            tvOutput3.setText(input*select/km+" km");
+            tvOutput4.setText(input*select/dam+" Dặm");
+            tvOutput5.setText(input*select/foot+" foot");
+            tvOutput6.setText(input*select/inch+" inch");
+        }
     }
     private double selected(){
         String s= spnSelect.getSelectedItem().toString();

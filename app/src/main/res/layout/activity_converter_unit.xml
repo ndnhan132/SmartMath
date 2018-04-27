@@ -7,16 +7,17 @@
     tools:context="com.example.pc.smartmath.ConverterUnitActivity">
 
     <LinearLayout
+        android:background="@color/bg1"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:textStyle="italic"
             android:text="@string/UnitCv"
             android:textColor="@color/UnitCv_cl"
             android:gravity="center"
             android:textSize="@dimen/UnitCv_Size"
-
             android:layout_marginBottom="@dimen/UnitCv_Marginbot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -27,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:background="@null"
                 android:layout_margin="@dimen/img_margin"
                 android:id="@+id/imgbtnMoney"
                 android:layout_width="@dimen/img_width"
@@ -34,6 +36,7 @@
                 android:scaleType="fitStart"
                 android:src="@drawable/exchange" />
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnSpeed"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -47,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnTemperature"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -55,6 +59,7 @@
                 android:src="@drawable/thermometer" />
 
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnWeight"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -68,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnDistance"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"
@@ -76,6 +82,7 @@
                 android:src="@drawable/route" />
 
             <ImageButton
+                android:background="@null"
                 android:id="@+id/imgbtnAngle"
                 android:layout_margin="@dimen/img_margin"
                 android:layout_width="@dimen/img_width"

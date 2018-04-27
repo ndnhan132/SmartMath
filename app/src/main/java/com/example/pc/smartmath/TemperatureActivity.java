@@ -27,6 +27,8 @@ public class TemperatureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature);
         initWidget();
+        getSupportActionBar().setTitle("Temperature");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<String> list= new ArrayList<>();
         list.add("C");
@@ -73,16 +75,17 @@ public class TemperatureActivity extends AppCompatActivity {
         tvOutput3= (TextView) findViewById(R.id.tvOutput3);
         tvOutput4= (TextView) findViewById(R.id.tvOutput4);
         spnSelect=(Spinner)findViewById(R.id.spnSelect);
-        tvOutput1.setText("");
     }
     private void Convert(){
         try{
             input= Float.parseFloat(edtInput.getText().toString());
         }catch (Exception ex){
-
         }
-        if(edtInput.getText().equals("")){
+        if(edtInput.getText().toString().equals("")){
             tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
         }else {
             String s= spnSelect.getSelectedItem().toString();
             double select =0;

@@ -19,7 +19,7 @@ public class WeightActivity extends AppCompatActivity {
     private EditText edtInput;
     private TextView tvOutput1,tvOutput2,tvOutput3,tvOutput4,tvOutput5,tvOutput6;
     private Spinner spnSelect;
-    private float m, cm,mm,km,nm,um;
+    private double g, kg,pound,cara,ta,tan;
     private float input;
 
     @Override
@@ -27,20 +27,23 @@ public class WeightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
         initWidget();
+        getSupportActionBar().setTitle("Weight");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        m=1;
-        cm=m/100;
-        mm=m/1000;
-        km=m*1000;
-        nm=m/1000000000;
-        um=m/1000000;
-        List<String> list= new ArrayList<>();
-        list.add("m");
-        list.add("cm");
-        list.add("mm");
-        list.add("km");
-        list.add("nm");
-        list.add("µm");
+        g=1;
+        kg=1000*g;
+        ta=100000*g;
+        tan=1000000*g;
+        cara=g/5;
+        pound= 453.59237*g;
+
+        List<String>list= new ArrayList<>();
+        list.add("G");
+        list.add("Kg");
+        list.add("Pound");
+        list.add("Cara");
+        list.add("Tạ");
+        list.add("Tấn");
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spnSelect.setAdapter(adapter);
@@ -90,35 +93,44 @@ public class WeightActivity extends AppCompatActivity {
         }catch (Exception ex){
 
         }
-        float select= selected();
-        tvOutput1.setText(input*select/m+" m");
-        tvOutput2.setText(input*select/cm+" cm");
-        tvOutput3.setText(input*select/mm+" mm");
-        tvOutput4.setText(input*select/km+" km");
-        tvOutput5.setText(input*select/nm+" nm");
-        tvOutput6.setText(input*select/um+" µm");
+        if (edtInput.getText().toString().equals("")){
+            tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
+            tvOutput5.setText(" ");
+            tvOutput6.setText(" ");
+        }else {
+            double select= selected();
+            tvOutput1.setText(input*select/g+" G");
+            tvOutput2.setText(input*select/kg+" Kg");
+            tvOutput3.setText(input*select/pound+" Pound");
+            tvOutput4.setText(input*select/cara+" Cara");
+            tvOutput5.setText(input*select/ta+" Tạ");
+            tvOutput6.setText(input*select/tan+" Tấn");
+        }
     }
-    private float selected(){
+    private double selected(){
         String s= spnSelect.getSelectedItem().toString();
-        float select= 0;
+        double select= 0;
         switch(s){
-            case "m":
-                select= m;
+            case "G":
+                select= g;
                 break;
-            case "mm":
-                select= mm;
+            case "Kg":
+                select= kg;
                 break;
-            case "cm":
-                select= cm;
+            case "Cara":
+                select= cara;
                 break;
-            case "km":
-                select= km;
+            case "Pound":
+                select= pound;
                 break;
-            case "nm":
-                select= nm;
+            case "Tạ":
+                select= ta;
                 break;
-            case "um":
-                select= um;
+            case "Tấn":
+                select= tan;
                 break;
         }
         return select;

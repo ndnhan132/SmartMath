@@ -19,7 +19,7 @@ public class SpeedActivity extends AppCompatActivity {
     private EditText edtInput;
     private TextView tvOutput1,tvOutput2,tvOutput3,tvOutput4,tvOutput5,tvOutput6;
     private Spinner spnSelect;
-    private float m, cm,mm,km,nm,um;
+    private double ms, kmh,damh,yardh,foots,cms;
     private float input;
 
     @Override
@@ -27,20 +27,22 @@ public class SpeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed);
         initWidget();
+        getSupportActionBar().setTitle("Speed");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        m=1;
-        cm=m/100;
-        mm=m/1000;
-        km=m*1000;
-        nm=m/1000000000;
-        um=m/1000000;
-        List<String> list= new ArrayList<>();
-        list.add("m");
-        list.add("cm");
-        list.add("mm");
-        list.add("km");
-        list.add("nm");
-        list.add("µm");
+        ms=1;
+        kmh= 3.6*ms;
+        damh= 2.237*ms;
+        yardh= 3937.008*ms;
+        foots=3.281*ms;
+        cms= 100*ms;
+        List<String>list= new ArrayList<>();
+        list.add("M/s");
+        list.add("Km/h");
+        list.add("Dặm/h");
+        list.add("Yard/h");
+        list.add("Foot/s");
+        list.add("Cm/s");
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spnSelect.setAdapter(adapter);
@@ -90,37 +92,48 @@ public class SpeedActivity extends AppCompatActivity {
         }catch (Exception ex){
 
         }
-        float select= selected();
-        tvOutput1.setText(input*select/m+" m");
-        tvOutput2.setText(input*select/cm+" cm");
-        tvOutput3.setText(input*select/mm+" mm");
-        tvOutput4.setText(input*select/km+" km");
-        tvOutput5.setText(input*select/nm+" nm");
-        tvOutput6.setText(input*select/um+" µm");
+        if (edtInput.getText().toString().equals("")){
+            tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
+            tvOutput5.setText(" ");
+            tvOutput6.setText(" ");
+        }else {
+            double select= selected();
+            tvOutput1.setText(input*select/ms+" m/s");
+            tvOutput2.setText(input*select/kmh+" km/h");
+            tvOutput3.setText(input*select/damh+" dặm/h");
+            tvOutput4.setText(input*select/yardh+" yard/h");
+            tvOutput5.setText(input*select/foots+" foot/s");
+            tvOutput6.setText(input*select/cms+" cm/s");
+        }
     }
-    private float selected(){
+    private double selected(){
         String s= spnSelect.getSelectedItem().toString();
-        float select= 0;
+        double select= 0;
         switch(s){
-            case "m":
-                select= m;
+            case "M/s":
+                select= ms;
                 break;
-            case "mm":
-                select= mm;
+            case "Km/h":
+                select= kmh;
                 break;
-            case "cm":
-                select= cm;
+            case "Dặm/h":
+                select= damh;
                 break;
-            case "km":
-                select= km;
+            case "Yard/h":
+                select= yardh;
                 break;
-            case "nm":
-                select= nm;
+            case "Foot/s":
+                select= foots;
                 break;
-            case "um":
-                select= um;
+            case "Cm/s":
+                select= cms;
                 break;
         }
         return select;
     }
 }
+
+

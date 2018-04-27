@@ -27,6 +27,8 @@ public class CurrencyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
         initWidget();
+        getSupportActionBar().setTitle("Money");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         vnd=1;
         usd=vnd*22800;
@@ -90,13 +92,22 @@ public class CurrencyActivity extends AppCompatActivity {
         }catch (Exception ex){
 
         }
-        float select= selected();
-        tvOutput1.setText(input*select/vnd+" Vnd");
-        tvOutput2.setText(input*select/usd+" Dolla");
-        tvOutput3.setText(input*select/eur+" Uero");
-        tvOutput4.setText(input*select/gbp+" Bảng Anh");
-        tvOutput5.setText(input*select/cny+" Ndt");
-        tvOutput6.setText(input*select/jpy+" Yên");
+        if (edtInput.getText().toString().equals("")){
+            tvOutput1.setText(" ");
+            tvOutput2.setText(" ");
+            tvOutput3.setText(" ");
+            tvOutput4.setText(" ");
+            tvOutput5.setText(" ");
+            tvOutput6.setText(" ");
+        }else {
+            float select= selected();
+            tvOutput1.setText(input*select/vnd+" Vnd");
+            tvOutput2.setText(input*select/usd+" Dolla");
+            tvOutput3.setText(input*select/eur+" Uero");
+            tvOutput4.setText(input*select/gbp+" Bảng Anh");
+            tvOutput5.setText(input*select/cny+" Ndt");
+            tvOutput6.setText(input*select/jpy+" Yên");
+        }
     }
     private float selected(){
         String s= spnSelect.getSelectedItem().toString();

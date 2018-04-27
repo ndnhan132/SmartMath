@@ -16,6 +16,8 @@ public class ConverterUnitActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_converter_unit);
 
         initWidget();
+        getSupportActionBar().setTitle("ConverterUnit");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     private void initWidget(){
         imgbtnMoney= (ImageButton)findViewById(R.id.imgbtnMoney);
