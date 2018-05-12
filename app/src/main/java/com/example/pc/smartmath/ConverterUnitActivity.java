@@ -32,6 +32,9 @@ public class ConverterUnitActivity extends AppCompatActivity implements View.OnC
 
         SharedPreferences sharedSize = getSharedPreferences("my_prefs_size", Context.MODE_PRIVATE);
         int k = sharedSize.getInt("icon_size",0);
+        if(k==0){
+            k=175;
+        }
         imgbtnMoney.getLayoutParams().width=k;
         imgbtnMoney.getLayoutParams().height=k;
         imgbtnSpeed.getLayoutParams().width=k;
