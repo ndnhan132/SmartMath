@@ -1,11 +1,14 @@
 package com.example.pc.smartmath;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +35,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imgbtnTeam.setOnClickListener(this);
         imgbtnList.setOnClickListener(this);
         imgbtnSetting.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
+        int bg = sharedPref.getInt("background_resource", 0);
+        LinearLayout main= (LinearLayout)findViewById(R.id.llMain);
+        main.setBackgroundColor(bg);
+
+        SharedPreferences sharedSize = getSharedPreferences("my_prefs_size", Context.MODE_PRIVATE);
+        int k = sharedSize.getInt("icon_size",0);
+        imgbtnCal.getLayoutParams().width=k;
+        imgbtnCal.getLayoutParams().height=k;
+        imgbtnConvert.getLayoutParams().width=k;
+        imgbtnConvert.getLayoutParams().height=k;
+        imgbtnCam.getLayoutParams().width=k;
+        imgbtnCam.getLayoutParams().height=k;
+        imgbtnList.getLayoutParams().width=k;
+        imgbtnList.getLayoutParams().height=k;
+        imgbtnSetting.getLayoutParams().width=k;
+        imgbtnSetting.getLayoutParams().height=k;
+        imgbtnTeam.getLayoutParams().width=k;
+        imgbtnTeam.getLayoutParams().height=k;
     }
 
     @Override

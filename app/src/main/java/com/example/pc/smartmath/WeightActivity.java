@@ -1,5 +1,7 @@
 package com.example.pc.smartmath;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +25,13 @@ public class WeightActivity extends AppCompatActivity {
     private double g, kg,pound,cara,ta,tan;
     private float input;
 
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE);
+        int bg = sharedPref.getInt("background_resource", 0);
+        LinearLayout main= (LinearLayout)findViewById(R.id.llWeight);
+        main.setBackgroundColor(bg);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

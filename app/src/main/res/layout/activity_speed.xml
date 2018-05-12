@@ -7,6 +7,7 @@
     tools:context="com.example.pc.smartmath.SpeedActivity">
 
     <LinearLayout
+        android:id="@+id/llSpeed"
         android:background="@color/bg1"
         android:orientation="vertical"
         android:layout_width="match_parent"

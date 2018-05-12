@@ -16,5 +16,13 @@
     <string name="set_bg">Màu nền</string>
     <string name="set_size">Kích cỡ icon</string>
 
+    <string name="GVHD">Giáo viên hướng dẫn:</string>
+    <string name="TTV">Mr. Trần Thế Vũ</string>
+    <string name="NDT">Mr. Nguyễn Đức Tài</string>
+    <string name="product_dev">Sản phẩm được phát triển bởi: </string>
+    <string name="memNDN">Nguyễn Đình Nhân</string>
+    <string name="memNVS">Nguyễn Văn Sơn</string>
+    <string name="memQHN">Quách Hùng Nam</string>
+    <string name="memVTPN">Võ Thị Phước Ngọc</string>
 
 </resources>
